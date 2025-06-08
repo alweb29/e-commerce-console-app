@@ -13,7 +13,6 @@ public class SecondSameProductHalfPrice implements Promotion {
         double total = 0;
         for (List<Product> group : grouped.values()) {
             int count = group.size();
-            group.sort(Comparator.comparing(Product::getPrice));
             for (int i = 0; i < count; i++) {
                 if ((i + 1) % 2 == 0) {
                     total += group.get(i).getPrice() * 0.5;

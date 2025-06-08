@@ -6,7 +6,6 @@ public class ProductCatalog {
     private final List<Product> products = new ArrayList<>();
 
     public ProductCatalog() {
-        // Predefiniowane produkty
         products.add(new Product("Jabłko", 2.50, Category.OWOCE, true));
         products.add(new Product("Banan", 3.00, Category.OWOCE, true));
         products.add(new Product("Mleko", 4.00, Category.NABIAL, true));

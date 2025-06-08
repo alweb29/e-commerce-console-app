@@ -1,24 +1,33 @@
 package pl.supermarket;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class ThirdProductForOneZloty implements Promotion {
     @Override
     public double apply(List<Product> products) {
-        List<Product> sorted = products.stream()
-                .sorted(Comparator.comparing(Product::getPrice))
-                .collect(Collectors.toList());
+        if (products.isEmpty()) return 0;
 
+        List<Product> sorted = new ArrayList<>(products);
+        sorted.sort(Comparator.comparing(Product::getPrice));
+        
         double total = 0;
-        for (int i = 0; i < sorted.size(); i++) {
-            if ((i + 1) % 3 == 0) {
-                total += 1.0;
+        
+        for (int i = 0; i < sorted.size(); i += 3) {
+            int groupEnd = Math.min(i + 3, sorted.size());
+            List<Product> group = sorted.subList(i, groupEnd);
+            
+            if (group.size() >= 3) {
+                total += 1.0; 
+                total += group.get(1).getPrice(); 
+                total += group.get(2).getPrice(); 
             } else {
-                total += sorted.get(i).getPrice();
+        
+                for (Product p : group) {
+                    total += p.getPrice();
+                }
             }
         }
+        
         return total;
     }
 }
