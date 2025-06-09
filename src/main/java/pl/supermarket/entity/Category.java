@@ -1,4 +1,4 @@
-package pl.supermarket;
+package pl.supermarket.entity;
 
 public enum Category {
     OWOCE,

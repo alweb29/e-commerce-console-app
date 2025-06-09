@@ -1,4 +1,6 @@
-package pl.supermarket;
+package pl.supermarket.promotions;
+
+import pl.supermarket.entity.Product;
 
 import java.util.*;
 
@@ -29,5 +31,15 @@ public class ThirdProductForOneZloty implements Promotion {
         }
         
         return total;
+    }
+
+
+    public String getName(){
+        return "ZLOTOWKA";
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": Przy zakupie 3 produktów najtańszy jest za złotówkę";
     }
 }

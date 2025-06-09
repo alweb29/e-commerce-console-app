@@ -3,21 +3,29 @@ package pl.supermarket;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import pl.supermarket.entity.Category;
+import pl.supermarket.entity.Product;
+import pl.supermarket.promotions.SecondSameProductHalfPrice;
+import pl.supermarket.promotions.TenPercentDiscount;
+import pl.supermarket.promotions.ThirdProductForOneZloty;
+import pl.supermarket.service.ShoppingCartService;
+import pl.supermarket.service.CatalogService;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
-class SupermarketTest {
+class PromotionUnitTests {
 
-    private ShoppingCart cart;
-    private ProductCatalog catalog;
+    private ShoppingCartService cart;
+    private CatalogService catalog;
     private Product apple;
     private Product banana;
     private Product milk;
     
     @BeforeEach
     void setUp() {
-        cart = new ShoppingCart();
-        catalog = new ProductCatalog();
+        cart = new ShoppingCartService();
+        catalog = new CatalogService();
         
         apple = new Product("Jabłko", 2.50, Category.OWOCE, true);
         banana = new Product("Banan", 3.00, Category.OWOCE, true);

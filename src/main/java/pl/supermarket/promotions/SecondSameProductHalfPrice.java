@@ -1,4 +1,6 @@
-package pl.supermarket;
+package pl.supermarket.promotions;
+
+import pl.supermarket.entity.Product;
 
 import java.util.*;
 
@@ -22,5 +24,14 @@ public class SecondSameProductHalfPrice implements Promotion {
             }
         }
         return total;
+    }
+
+    public String getName(){
+        return "50PROCENT";
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": Drugi taki sam produkt połowę ceny";
     }
 }
