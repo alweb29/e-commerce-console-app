@@ -26,6 +26,7 @@ public class StockService {
     );
 
     public static Set<Product> uniqueProducts = new HashSet<>();
+
     static {
         productNamePriceMap.keySet().forEach(key -> uniqueProducts.add(createProductFromMap(key)));
     }

@@ -25,7 +25,7 @@ public class ShoppingCartService {
     }
 
     public Optional<Product> removeProduct(String productName) {
-        boolean removed =  products.removeIf(product -> product.getName().equals(productName));
+        boolean removed = products.removeIf(product -> product.getName().equals(productName));
         return removed ? Optional.of(createProductFromMap(productName)) : Optional.empty();
     }
 

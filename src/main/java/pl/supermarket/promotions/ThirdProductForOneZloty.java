@@ -2,7 +2,9 @@ package pl.supermarket.promotions;
 
 import pl.supermarket.entity.Product;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class ThirdProductForOneZloty implements Promotion {
     @Override
@@ -11,30 +13,30 @@ public class ThirdProductForOneZloty implements Promotion {
 
         List<Product> sorted = new ArrayList<>(products);
         sorted.sort(Comparator.comparing(Product::getPrice));
-        
+
         double total = 0;
-        
+
         for (int i = 0; i < sorted.size(); i += 3) {
             int groupEnd = Math.min(i + 3, sorted.size());
             List<Product> group = sorted.subList(i, groupEnd);
-            
+
             if (group.size() >= 3) {
-                total += 1.0; 
-                total += group.get(1).getPrice(); 
-                total += group.get(2).getPrice(); 
+                total += 1.0;
+                total += group.get(1).getPrice();
+                total += group.get(2).getPrice();
             } else {
-        
+
                 for (Product p : group) {
                     total += p.getPrice();
                 }
             }
         }
-        
+
         return total;
     }
 
 
-    public String getName(){
+    public String getName() {
         return "ZLOTOWKA";
     }
 

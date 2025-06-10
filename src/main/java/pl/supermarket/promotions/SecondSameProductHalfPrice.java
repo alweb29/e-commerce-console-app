@@ -2,7 +2,10 @@ package pl.supermarket.promotions;
 
 import pl.supermarket.entity.Product;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SecondSameProductHalfPrice implements Promotion {
     @Override
@@ -26,7 +29,7 @@ public class SecondSameProductHalfPrice implements Promotion {
         return total;
     }
 
-    public String getName(){
+    public String getName() {
         return "50PROCENT";
     }
 

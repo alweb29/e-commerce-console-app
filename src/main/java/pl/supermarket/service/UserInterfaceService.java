@@ -145,7 +145,7 @@ public class UserInterfaceService {
     }
 
     private void filterCatalog() {
-        for (Category category: Category.values()) {
+        for (Category category : Category.values()) {
             System.out.println("# " + category);
         }
         System.out.println("# ALFABETYCZNIE");

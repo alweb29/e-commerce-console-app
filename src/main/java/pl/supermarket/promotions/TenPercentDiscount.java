@@ -11,7 +11,7 @@ public class TenPercentDiscount implements Promotion {
         return sum * 0.9;
     }
 
-    public String getName(){
+    public String getName() {
         return "PROMO10";
     }
 

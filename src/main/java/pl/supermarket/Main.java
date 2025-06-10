@@ -18,6 +18,6 @@ public class Main {
                 List.of(new SecondSameProductHalfPrice(),
                         new TenPercentDiscount(),
                         new ThirdProductForOneZloty())
-                ).run();
+        ).run();
     }
 }

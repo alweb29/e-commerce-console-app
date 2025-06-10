@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface Promotion {
     String getName();
+
     double apply(List<Product> products);
 }

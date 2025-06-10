@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import static pl.supermarket.service.StockService.uniqueProducts;
 
 public class CatalogService {
-    private List<Product> availableProducts;
+    private final List<Product> availableProducts;
     @Getter
     @Setter
     private boolean isSortingByCategory;
@@ -61,6 +61,7 @@ public class CatalogService {
             System.out.println("\nBrak produktów w wybranej kategorii");
         }
     }
+
     public List<Product> getAllProductsSortedByName() {
         return uniqueProducts.stream()
                 .sorted(Comparator.comparing(Product::getName))
