@@ -72,9 +72,9 @@ class CatalogServiceTest {
     @Test
     void getAvailableProductsByCategorySortedByPriceTestWhenInneNotAvailable() {
         //WHEN:
-        List<Product> owoceList = catalogService.getAvailableProductsByCategorySortedByPrice(Category.INNE);
+        List<Product> itemsList = catalogService.getAvailableProductsByCategorySortedByPrice(Category.INNE);
         //THEN:
-        assertTrue(owoceList.isEmpty());
+        assertTrue(itemsList.isEmpty());
     }
 
     @Test
